@@ -1,0 +1,21 @@
+{
+  "segmentList": ["fc00:1::a", "fc00:2::b", "fc00:3::c"],
+  "behaviors": {
+    "fc00:1::a": { "node": "N1", "type": "End.X", "nextHop": "N2" },
+    "fc00:2::b": { "node": "N2", "type": "End" },
+    "fc00:3::c": { "node": "N3", "type": "End.DT4", "vrf": "BLUE" }
+  },
+  "adjacency": {
+    "N1": ["N2"],
+    "N2": ["N3"],
+    "N3": []
+  },
+  "vrfs": {
+    "N3": ["RED"]
+  },
+  "encap": { "type": "H.Encaps.Red", "packetSize": 1400 },
+  "mtu": 1500,
+  "returnPolicy": { "symmetric": true, "path": ["N3", "N1"] },
+  "packetDst": "10.0.0.1",
+  "vrf": "RED"
+}

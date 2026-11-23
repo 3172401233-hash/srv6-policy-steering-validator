@@ -1,0 +1,15 @@
+{
+  "name": "srv6-policy-steering-validator",
+  "version": "1.0.0",
+  "description": "SRv6 策略段列表与行为链路径校验器(控制面仿真,不生成真实 IPv6 报文)",
+  "type": "module",
+  "main": "src/validator.js",
+  "engines": {
+    "node": ">=24.16.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "validate": "node src/cli.js"
+  },
+  "license": "MIT"
+}
